@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<!-- Linking External CSS to html -->
+	<link rel="stylesheet" href="Scss/style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="element">
+
+	<!-- ============== Calculator Body ============== -->
+	<div class="app">
+
+		<div class="calculator">
+
+			<!-- Parent Class For Icons -->
+			<div class="icons">
+				<i style="padding-left: 20px;  font-size: smaller;"><b>9:41</b></i>
+				<!-- Using FontAwesome For Icons -->
+				<i style="padding-left: 140px; font-size: smaller;" class="fa fa-signal" aria-hidden="true"></i>
+				<i class="fa fa-wifi" aria-hidden="true"></i>
+				<i class="fa fa-battery-full" aria-hidden="true"></i>
+			</div>
+
+			<div class="theme-toggle"><span></span></div>
+			<!-- ============== Calculator Display Screen Start ============== -->
+			<div class="display">
+				<div class="content">
+					<div class="input"></div>
+					<div class="output">0</div>
+				</div>
+				<!-- ============== Calculator Display Screen Start ============== -->
+			</div>
+
+			<!-- ============== Calculator Buttons Start ============== -->
+			<div class="keys">
+
+				<div data-key="clear" class="key action">
+					<span>AC</span>
+				</div>
+
+				<div data-key="M" class="key action">
+					<span>M</span>
+				</div>
+
+				<div data-key="%" class="key action">
+					<span>%</span>
+				</div>
+
+				<div data-key="/" class="key operator">
+					<span style="font-size: 1.23rem;">÷</span>
+				</div>
+
+				<div data-key="7" class="key">
+					<span>7</span>
+				</div>
+
+				<div data-key="8" class="key">
+					<span>8</span>
+				</div>
+
+				<div data-key="9" class="key">
+					<span>9</span>
+				</div>
+
+				<div data-key="*" class="key operator">
+					<span style="font-size: 1.1rem;">x</span>
+				</div>
+
+				<div data-key="4" class="key">
+					<span>4</span>
+				</div>
+
+				<div data-key="5" class="key">
+					<span>5</span>
+				</div>
+
+				<div data-key="6" class="key">
+					<span>6</span>
+				</div>
+
+				<div data-key="-" class="key operator">
+					<span style="font-size: 1.23rem;">-</span>
+				</div>
+
+				<div data-key="1" class="key">
+					<span>1</span>
+				</div>
+
+				<div data-key="2" class="key">
+					<span>2</span>
+				</div>
+
+				<div data-key="3" class="key">
+					<span>3</span>
+				</div>
+
+				<div data-key="+" class="key operator">
+					<span style="font-size: 1.23rem;">+</span>
+				</div>
+
+				<div data-key="backspace" class="key">
+					<span>↻</span>
+				</div>
+
+				<div data-key="0" class="key">
+					<span>0</span>
+				</div>
+
+				<div data-key="." class="key">
+					<span>.</span>
+				</div>
+
+				<div data-key="=" class="key operator">
+					<span style="font-size: 1.23rem;">=</span>
+				</div>
+
+				<div class="bar"></div>
+			</div>
+			<!-- ============== Calculator Buttons End ============== -->
+		</div>
+
+		<!-- ========== Calculator History Start ========== -->
+		<div class="historybody">
+			<h4 style="text-align: center; color: #EB6666; text-decoration: underline;">
+				Calculation History</h4>
+			<div class="history" id="scrollbar">There is no history yet.</div>
+		</div>
+		<!-- ========== Calculator History End ========== -->
+
+		<!-- Linking External javascript in html file -->
+		<script src="calc.js"></script>
+</body>
+
+</html>

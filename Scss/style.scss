@@ -1,0 +1,288 @@
+//======== Define Scss Variables ========
+$color_1: white;
+$color_2: #EB6666;
+$color_3: #26FED7;
+$color_4: #FFF;
+$color_5: black;
+$color_6: #000;
+$font-family_1: sans-serif;
+$bg-color_1: #22252D;
+$bg-color_2: #292D36;
+$bg-color_3: #262933;
+$bg-color_5: #fff;
+$bg-color_6: #000;
+$bg-color_10: #fbfcfa;
+//$bg-color_8: aliceblue;
+
+// ========= Styling For Calculator Body  =========
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $font-family_1;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+// ========= Styling For Icons  =========
+.icons {
+	color: $color_1;
+	margin-top: 8px;
+	font-size: 0.7rem;
+	font-weight: 400px;
+}
+
+.calculator {
+	background-color: $bg-color_1;
+	width: 100%;
+	max-width: 250px;
+	min-height: 520px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1.5rem;
+	overflow: hidden;
+}
+
+// ============== Calculator Display Screen ============== 
+//Using a CSS Flex for Calculator Display Screen 
+.display {
+	padding: 1rem; //1.5rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	color: $color_1;
+	text-align: right;
+	flex: 1 1 0%;
+}
+
+//Calculator's Display Content 
+.display .content {
+	//To make all elements center 
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	max-width: 100%;
+	overflow: auto;
+}
+
+//Calculator's Display Input Content 
+.display .input {
+	width: 100%;
+	font-size: 1rem; //1.23rem;
+	margin-bottom: 0.5rem;
+	overflow-wrap: break-word;
+	word-break: break-all;
+}
+
+//Calculator's Display Output Content 
+.display .output {
+	font-size: 2rem; //2.5rem;
+	font-weight: 600;
+	width: 100%;
+	//white-space: nowrap;
+	overflow-wrap: break-word;
+	word-break: break-all;
+}
+
+.display .operator {
+	color: $color_2;
+}
+
+.display .brackets,
+.display .percent {
+	color: $color_3;
+}
+
+// ============== Styling For Calculator Buttons ==============
+//Using a CSS Grid for Calculator Buttons 
+.keys {
+	background-color: $bg-color_2;
+	padding: 1.5rem;
+	border-radius: 1.5rem 1.5rem 0 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: 0.6rem;
+	box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	height: 0;
+	padding-top: 100%;
+	background-color: $bg-color_3;
+	border-radius: 1rem;
+	transition: 0.2s;
+	user-select: none;
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 1rem;
+		font-weight: 700;
+		color: $color_4;
+		animation: move 10s linear infinite;
+	}
+}
+
+.keys .key:hover {
+	box-shadow: inset 0px 0px 8px grey //rgba(0, 0, 0, 0.2);
+}
+
+.keys .key.operator span {
+	color: $color_2;
+}
+
+.keys .key.action span {
+	color: $color_3;
+}
+
+//Styling for the below horizontal line
+.bar {
+	height: 2px;
+	align-items: center;
+	background-color: hsla(60, 1%, 53%, 0.922);
+	width: 250%;
+	top: 20%;
+	left: 80%;
+	margin-right: -50%;
+	transform: translate(48px, 12px)
+}
+
+//  ========== For Dark and Light Theme ========== 
+.theme-toggle {
+	width: 54px;
+	height: 23px;
+	background-color: $bg-color_5;
+	border-radius: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	span {
+		width: 20px;
+		height: 20px;
+		background-color: $bg-color_6;
+		display: inline-block;
+		border-radius: 50px;
+		margin-left: 3px;
+		transition: .2s;
+	}
+
+	span.active-btn {
+		margin-left: 30.5px;
+	}
+}
+
+//For Dark Color 
+:root {
+	background-color: white; //rgb(27, 27, 32);
+
+	.historybody.historyheading {
+		color: white;
+	}
+}
+
+//For Light Color 
+.active-dark {
+	background-color: $color_5; //$bg-color_8;
+
+	.icons {
+		color: $color_5;
+	}
+
+	.display {
+		color: $color_5;
+	}
+
+	.keys {
+		background-color: rgb(255, 255, 255);
+
+		.key {
+			background-color: $bg-color_10;
+
+			span {
+				color: $color_6;
+			}
+		}
+	}
+
+	.calculator {
+		background-color: $bg-color_5;
+	}
+
+	.theme-toggle {
+		background-color: $bg-color_3;
+	}
+
+	.theme-toggle span {
+		background-color: $bg-color_5;
+	}
+
+	.keys .key.operator span {
+		color: $color_2;
+	}
+
+	.keys .key.action span {
+		color: $color_3;
+	}
+
+	.history {
+		color: black;
+	}
+
+	.historybody {
+		background-color: #fbfcfa;
+	}
+
+	#scrollbar {
+		background-color: #fbfcfa;
+	}
+}
+
+// Styling for historybody
+.historybody {
+	float: right;
+	width: 250px;
+	height: 520px;
+	background-color: #262933;
+	//#636363;
+	border-radius: 1.5rem;
+	margin-top: 6px;
+	padding: 10px;
+	box-shadow: 0px 3px 5px #444444 inset; //0px 5px 10px #444444 inset;
+}
+
+// Styling for history
+.history {
+	color: white;
+	width: 200px;
+	height: 420px;
+	resize: none;
+	overflow: hidden;
+	margin-top: 15px;
+	margin-left: 10px;
+	//text-align: center;
+}
+
+#scrollbar {
+	width: 220px;
+	height: 450px;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	scroll-behavior: smooth;
+	background-color: #262933;
+}

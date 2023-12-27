@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.icons {
+  color: white;
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-weight: 400px;
+}
+
+.calculator {
+  background-color: #22252D;
+  width: 100%;
+  max-width: 250px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.display {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: white;
+  text-align: right;
+  flex: 1 1 0%;
+}
+
+.display .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.display .input {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.display .output {
+  font-size: 2rem;
+  font-weight: 600;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.display .operator {
+  color: #EB6666;
+}
+
+.display .brackets,
+.display .percent {
+  color: #26FED7;
+}
+
+.keys {
+  background-color: #292D36;
+  padding: 1.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 0.6rem;
+  box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  height: 0;
+  padding-top: 100%;
+  background-color: #262933;
+  border-radius: 1rem;
+  transition: 0.2s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.keys .key span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFF;
+  animation: move 10s linear infinite;
+}
+
+.keys .key:hover {
+  box-shadow: inset 0px 0px 8px grey;
+}
+
+.keys .key.operator span {
+  color: #EB6666;
+}
+
+.keys .key.action span {
+  color: #26FED7;
+}
+
+.bar {
+  height: 2px;
+  align-items: center;
+  background-color: hsla(60, 1%, 53%, 0.922);
+  width: 250%;
+  top: 20%;
+  left: 80%;
+  margin-right: -50%;
+  transform: translate(48px, 12px);
+}
+
+.theme-toggle {
+  width: 54px;
+  height: 23px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.theme-toggle span {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  display: inline-block;
+  border-radius: 50px;
+  margin-left: 3px;
+  transition: 0.2s;
+}
+.theme-toggle span.active-btn {
+  margin-left: 30.5px;
+}
+
+:root {
+  background-color: white;
+}
+:root .historybody.historyheading {
+  color: white;
+}
+
+.active-dark {
+  background-color: black;
+}
+.active-dark .icons {
+  color: black;
+}
+.active-dark .display {
+  color: black;
+}
+.active-dark .keys {
+  background-color: rgb(255, 255, 255);
+}
+.active-dark .keys .key {
+  background-color: #fbfcfa;
+}
+.active-dark .keys .key span {
+  color: #000;
+}
+.active-dark .calculator {
+  background-color: #fff;
+}
+.active-dark .theme-toggle {
+  background-color: #262933;
+}
+.active-dark .theme-toggle span {
+  background-color: #fff;
+}
+.active-dark .keys .key.operator span {
+  color: #EB6666;
+}
+.active-dark .keys .key.action span {
+  color: #26FED7;
+}
+.active-dark .history {
+  color: black;
+}
+.active-dark .historybody {
+  background-color: #fbfcfa;
+}
+.active-dark #scrollbar {
+  background-color: #fbfcfa;
+}
+
+.historybody {
+  float: right;
+  width: 250px;
+  height: 520px;
+  background-color: #262933;
+  border-radius: 1.5rem;
+  margin-top: 6px;
+  padding: 10px;
+  box-shadow: 0px 3px 5px #444444 inset;
+}
+
+.history {
+  color: white;
+  width: 200px;
+  height: 420px;
+  resize: none;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+#scrollbar {
+  width: 220px;
+  height: 450px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  background-color: #262933;
+}/*# sourceMappingURL=style.css.map */
